@@ -16,7 +16,7 @@ import java.util.List;
 public class TeacherController {
     private final TeacherServiceImpl teacherService;
 
-    @GetMapping("/teachers")
+    @GetMapping("getAll")
     @ResponseStatus(HttpStatus.OK)
     private List<TeacherListResponse> getAll(){
         return teacherService.getAll();

@@ -26,6 +26,12 @@ public class Student{
     private String email;
     private String password;
 
+    @OneToOne(mappedBy = "student")
+    private Parent parent;
+
+    @OneToMany(mappedBy = "student")
+    private List<Grade> grades;
+
     @ManyToOne
     @JoinColumn(name = "classroom_id")
     private Classroom classroom;
