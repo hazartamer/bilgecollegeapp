@@ -1,9 +1,9 @@
 package com.example.bilgecollegeapp.controller;
 
 import com.example.bilgecollegeapp.service.concretes.ClassroomServiceImpl;
-import com.example.bilgecollegeapp.service.dtos.classroom.ClassroomAddRequest;
-import com.example.bilgecollegeapp.service.dtos.classroom.ClassroomAddResponse;
-import com.example.bilgecollegeapp.service.dtos.classroom.ClassroomListResponse;
+import com.example.bilgecollegeapp.model.dtos.classroom.ClassroomAddRequest;
+import com.example.bilgecollegeapp.model.dtos.classroom.ClassroomAddResponse;
+import com.example.bilgecollegeapp.model.dtos.classroom.ClassroomListResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -15,6 +15,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ClassroomController {
     private final ClassroomServiceImpl service;
+
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public List<ClassroomListResponse> getAll(){
@@ -25,4 +26,5 @@ public class ClassroomController {
     public ClassroomAddResponse response(ClassroomAddRequest request){
         return service.add(request);
     }
+
 }

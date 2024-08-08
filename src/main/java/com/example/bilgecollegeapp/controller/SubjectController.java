@@ -1,9 +1,9 @@
 package com.example.bilgecollegeapp.controller;
 
 import com.example.bilgecollegeapp.service.concretes.SubjectServiceImpl;
-import com.example.bilgecollegeapp.service.dtos.subject.SubjectAddRequest;
-import com.example.bilgecollegeapp.service.dtos.subject.SubjectAddResponse;
-import com.example.bilgecollegeapp.service.dtos.subject.SubjectListResponse;
+import com.example.bilgecollegeapp.model.dtos.subject.SubjectAddRequest;
+import com.example.bilgecollegeapp.model.dtos.subject.SubjectAddResponse;
+import com.example.bilgecollegeapp.model.dtos.subject.SubjectListResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping
+@RequestMapping("/subjects")
 @RequiredArgsConstructor
 public class SubjectController {
     private final SubjectServiceImpl service;
